@@ -59,8 +59,8 @@ void SensorService::onFirstRef()
     if (dev.initCheck() == NO_ERROR) {
         uint32_t virtualSensorsNeeds =
                 (1<<SENSOR_TYPE_GRAVITY) |
-                (1<<SENSOR_TYPE_LINEAR_ACCELERATION) |
-                (1<<SENSOR_TYPE_ROTATION_VECTOR);
+                (1<<SENSOR_TYPE_LINEAR_ACCELERATION) /*|
+                (1<<SENSOR_TYPE_ROTATION_VECTOR)*/;
         sensor_t const* list;
         int count = dev.getSensorList(&list);
         mLastEventSeen.setCapacity(count);
